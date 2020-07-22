@@ -99,27 +99,55 @@ img {
  * 2. Remove the margin in Firefox and Safari.
  */
 
+button {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
+
+button { /* 1 */
+  overflow: visible;
+}
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
+button { /* 1 */
+  text-transform: none;
+}
+
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
+
+button {
+  -webkit-appearance: button;
+}
 
 /**
  * Remove the inner border and padding in Firefox.
  */
 
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 /**
  * Restore the focus styles unset by the previous rule.
  */
+
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
 
 /**
  * Correct the padding in Firefox.
@@ -200,10 +228,21 @@ p {
   margin: 0;
 }
 
+button {
+  background-color: transparent;
+  background-image: none;
+  padding: 0;
+}
+
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
  */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
 
 /**
  * Tailwind custom reset styles
@@ -269,6 +308,10 @@ img {
   border-style: solid;
 }
 
+button {
+  cursor: pointer;
+}
+
 /**
  * Reset links to optimize for opt-in styling instead of
  * opt-out.
@@ -286,6 +329,12 @@ a {
  * supplement a partial reset that is already applied by
  * normalize.css.
  */
+
+button {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
 
 /**
  * Use the configured 'mono' font family for elements that
@@ -352,16 +401,28 @@ img {
   }
 }
 
-.bg-gray-200 {
-  --bg-opacity: 1;
-  background-color: #edf2f7;
-  background-color: rgba(237, 242, 247, var(--bg-opacity));
+.space-y-6 > :not(template) ~ :not(template) {
+  --space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--space-y-reverse));
 }
 
-.bg-blue-600 {
+.space-x-8 > :not(template) ~ :not(template) {
+  --space-x-reverse: 0;
+  margin-right: calc(2rem * var(--space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--space-x-reverse)));
+}
+
+.bg-white {
   --bg-opacity: 1;
-  background-color: #3182ce;
-  background-color: rgba(49, 130, 206, var(--bg-opacity));
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+.bg-gray-600 {
+  --bg-opacity: 1;
+  background-color: #718096;
+  background-color: rgba(113, 128, 150, var(--bg-opacity));
 }
 
 .rounded-lg {
@@ -396,8 +457,12 @@ img {
   justify-content: space-around;
 }
 
-.font-bold {
-  font-weight: 700;
+.font-extrabold {
+  font-weight: 800;
+}
+
+.h-16 {
+  height: 4rem;
 }
 
 .h-72 {
@@ -406,6 +471,10 @@ img {
 
 .text-2xl {
   font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
 }
 
 .m-4 {
@@ -426,16 +495,20 @@ img {
   margin-top: 1rem;
 }
 
-.mb-16 {
-  margin-bottom: 4rem;
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-16 {
-  padding: 4rem;
 }
 
 .py-4 {
@@ -451,6 +524,10 @@ img {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .sticky {
@@ -476,8 +553,28 @@ img {
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
+.text-gray-600 {
+  --text-opacity: 1;
+  color: #718096;
+  color: rgba(113, 128, 150, var(--text-opacity));
+}
+
+.text-blue-600 {
+  --text-opacity: 1;
+  color: #3182ce;
+  color: rgba(49, 130, 206, var(--text-opacity));
+}
+
+.w-40 {
+  width: 10rem;
+}
+
 .w-72 {
   width: 24rem;
+}
+
+.w-1\/5 {
+  width: 20%;
 }
 
 .z-10 {
