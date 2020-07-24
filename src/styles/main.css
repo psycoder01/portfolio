@@ -401,12 +401,6 @@ img {
   }
 }
 
-.space-y-6 > :not(template) ~ :not(template) {
-  --space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--space-y-reverse));
-}
-
 .space-x-8 > :not(template) ~ :not(template) {
   --space-x-reverse: 0;
   margin-right: calc(2rem * var(--space-x-reverse));
@@ -453,24 +447,20 @@ img {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
+.content-center {
+  align-content: center;
 }
 
 .font-extrabold {
   font-weight: 800;
 }
 
-.h-16 {
-  height: 4rem;
+.h-12 {
+  height: 3rem;
 }
 
-.h-72 {
-  height: 24rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
+.h-64 {
+  height: 16rem;
 }
 
 .text-3xl {
@@ -479,11 +469,6 @@ img {
 
 .m-4 {
   margin: 1rem;
-}
-
-.mx-16 {
-  margin-left: 4rem;
-  margin-right: 4rem;
 }
 
 .mx-auto {
@@ -495,16 +480,8 @@ img {
   margin-top: 1rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
 .mb-12 {
   margin-bottom: 3rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .p-4 {
@@ -526,8 +503,8 @@ img {
   padding-right: 2rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .sticky {
@@ -565,16 +542,12 @@ img {
   color: rgba(49, 130, 206, var(--text-opacity));
 }
 
-.w-40 {
-  width: 10rem;
+.w-24 {
+  width: 6rem;
 }
 
-.w-72 {
-  width: 24rem;
-}
-
-.w-1\/5 {
-  width: 20%;
+.w-64 {
+  width: 16rem;
 }
 
 .z-10 {
@@ -588,5 +561,76 @@ img {
 
   .sm\:mt-0 {
     margin-top: 0;
+  }
+
+  .sm\:mt-12 {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:space-y-6 > :not(template) ~ :not(template) {
+    --space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--space-y-reverse));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-around {
+    justify-content: space-around;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
+  }
+
+  .md\:h-68 {
+    height: 20rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+  }
+
+  .md\:mx-16 {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .md\:w-40 {
+    width: 10rem;
+  }
+
+  .md\:w-68 {
+    width: 20rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-72 {
+    height: 24rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .lg\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .lg\:w-72 {
+    width: 24rem;
   }
 }
