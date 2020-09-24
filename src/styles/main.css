@@ -213,6 +213,10 @@ button:-moz-focusring {
  * Add the correct display in IE 10.
  */
 
+[hidden] {
+  display: none;
+}
+
 /**
  * Manually forked from SUIT CSS Base: https://github.com/suitcss/base
  * A thin layer on top of normalize.css that provides a starting point more
@@ -356,7 +360,8 @@ code {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img {
+img,
+svg {
   display: block;
   vertical-align: middle;
 }
@@ -429,6 +434,10 @@ img {
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .flex-row {
@@ -507,6 +516,10 @@ img {
   padding-top: 2rem;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -536,6 +549,12 @@ img {
   color: rgba(113, 128, 150, var(--text-opacity));
 }
 
+.text-teal-900 {
+  --text-opacity: 1;
+  color: #234e52;
+  color: rgba(35, 78, 82, var(--text-opacity));
+}
+
 .text-blue-600 {
   --text-opacity: 1;
   color: #3182ce;
@@ -555,6 +574,10 @@ img {
 }
 
 @media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -618,6 +641,10 @@ img {
 }
 
 @media (min-width: 1024px) {
+  .lg\:h-64 {
+    height: 16rem;
+  }
+
   .lg\:h-72 {
     height: 24rem;
   }
